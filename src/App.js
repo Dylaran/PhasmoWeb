@@ -1,21 +1,19 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './Navbar'
-import Home from './pages/Home'
-import PhasmoChallenge from './pages/Pricing'
-import PhasmoItems from './pages/About'
+import Home from './pages/Home.js'
+import PhasmoChallenge from './pages/Challenges.js'
+import PhasmoItems from './pages/Items.js'
 
 function App() {
   return (
-    <>
+    <div className="container">
       <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/challenges" element={<PhasmoChallenge />} />
-          <Route path="/items" element={<PhasmoItems />} />
-        </Routes>
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/challenges" element={<PhasmoChallenge />} />
+        <Route path="/items" element={<PhasmoItems />} />
+      </Routes>
+    </div>
   )
 }
 

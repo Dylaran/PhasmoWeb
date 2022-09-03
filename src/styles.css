@@ -2,36 +2,65 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   margin: 0;
 }
 
 .page {
-  display: flex;
+  height: 100vh;
 }
 
 .nav {
-  background-color: black;
+  background-color: #333;
   color: white;
   display: flex;
   justify-content: left;
   align-items: stretch;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0 1rem;
 }
 
 .container {
   width: 100%;
-  height: auto;
+  height: 100vh;
   text-align: center;
+  color: white;
+  background-color: black;
 }
 
-.home {
+.title {
   font-size: 2rem;
 }
 
-.background {
-  background-color: #333;
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: black;
+}
+
+.centered {
+  font-size: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rightPage {
+  right: 0;
 }
 
 .nav ul {
