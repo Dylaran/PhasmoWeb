@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body{
@@ -26,6 +27,7 @@ body{
   text-align: center;
   color: white;
   background-color: black;
+  
 }
 
 .title {
@@ -49,6 +51,7 @@ body{
 .right {
   right: 0;
   background-color: black;
+  text-align: left;
 }
 
 .centered {

@@ -5,7 +5,7 @@ export default function Home() {
     <div className="title">
       <h1>Phasmophobia</h1>
 
-      <div>This is just to add difficulty for the current Phasmophobia version.</div>
+      <div>This is just to add difficulty to Phasmophobia.</div>
 
       <div style={{ marginTop: 20 }}>If you wish for any features to be added or changed, </div>
 
