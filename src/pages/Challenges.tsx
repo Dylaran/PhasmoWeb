@@ -84,7 +84,7 @@ interface ChallengeLineProps {
   challenge: string
 }
 
-const ChallengeLine = (props: ChallengeLineProps) => {
+export const ChallengeLine = (props: ChallengeLineProps) => {
   const [clicked, setClicked] = useState<boolean>(false)
   return (
     <label
