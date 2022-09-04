@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/PhasmoWeb" element={<Home />} />
         <Route
-          path="/challenges"
+          path="/PhasmoWeb/Challenges"
           element={
             <PhasmoChallenge
               customChallenges={customChallenges}
@@ -27,7 +27,7 @@ function App() {
           }
         />
         <Route
-          path="/items"
+          path="/PhasmoWeb/Items"
           element={<PhasmoItems currentItems={currentItems} setCurrentItems={setCurrentItems} />}
         />
       </Routes>
