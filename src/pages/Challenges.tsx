@@ -39,6 +39,7 @@ export const DEFAULT_CHALLENGES = [
   'Finish Optional Objective 1',
   'Finish Optional Objective 2',
   'Finish Optional Objective 3',
+  'Map Randomizer',
   'Asylum (1 game)',
   'Prison (1 game)',
   'Medium map (2 games)',
