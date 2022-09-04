@@ -1,8 +1,12 @@
 import React from 'react'
 
-interface PhasmoItemsProps {}
+export const PHASMO_ITEMS = ['Spirit box', 'Ghost Writing Book', 'EMF Reader', 'UV Flashlight']
+interface PhasmoItemsProps {
+  currentItems: string[]
+  setCuRrentItems: React.Dispatch<React.SetStateAction<string[]>>
+}
 
-export default function PhasmoItems() {
+export default function PhasmoItems(props: PhasmoItemsProps) {
   return (
     <div className="centered">
       <h2>Phasmo Items</h2>
