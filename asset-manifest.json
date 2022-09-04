@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PhasmoWeb/static/css/main.d838774b.css",
+    "main.js": "/PhasmoWeb/static/js/main.ea2848b0.js",
+    "index.html": "/PhasmoWeb/index.html",
+    "main.d838774b.css.map": "/PhasmoWeb/static/css/main.d838774b.css.map",
+    "main.ea2848b0.js.map": "/PhasmoWeb/static/js/main.ea2848b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d838774b.css",
+    "static/js/main.ea2848b0.js"
+  ]
+}
