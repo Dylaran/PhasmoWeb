@@ -14,7 +14,7 @@ function App() {
     <div className="container">
       <Navbar />
       <Routes>
-        <Route path="/PhasmoWeb" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route
           path="/challenges"
           element={

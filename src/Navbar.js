@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 export default function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/PhasmoWeb" className="title">
+      <Link exact to="/" className="title">
         Home
       </Link>
       <ul>
