@@ -62,6 +62,18 @@ body{
   text-align: center;
 }
 
+.column {
+  width: 50%
+}
+
+.leftItem {
+  font-size: 2rem;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
 .rightPage {
   right: 0;
 }

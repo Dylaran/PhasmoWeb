@@ -80,7 +80,6 @@ const customStyles = {
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
 }
-
 interface ChallengeLineProps {
   challenge: string
 }
@@ -196,12 +195,15 @@ export default function PhasmoChallenge(props: ChallengesProps) {
             <div>(Ex: Photo randomizer will over-rule no photo cam)</div>
           </div>
 
-          <div style={{ height: 'auto', color: 'red' }}>{selected}</div>
           <div>
-            <button onClick={handleRoll} style={{ width: 100, fontSize: 20, marginTop: 20 }}>
+            <button
+              onClick={handleRoll}
+              style={{ width: 100, fontSize: 20, marginTop: 20, marginBottom: 20 }}
+            >
               Roll
             </button>
           </div>
+          <div style={{ height: 'auto', color: 'red' }}>{selected}</div>
           <div>
             <button onClick={openModal} style={{ width: 140, fontSize: 20, marginTop: 20 }}>
               Edit Challenges
