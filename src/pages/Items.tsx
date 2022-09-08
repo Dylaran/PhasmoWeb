@@ -100,7 +100,7 @@ export default function PhasmoItems() {
             <div className="column">
               <h5 style={{ marginBottom: 0 }}>Item List</h5>
               <h6 style={{ marginTop: 0, marginBottom: 20 }}>
-                Click an item to <span style={{ color: 'red' }}>toggle</span> on/off
+                Click an item to toggle on/<span style={{ color: 'red' }}>off</span>
               </h6>
               <ul
                 style={{
