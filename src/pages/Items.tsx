@@ -31,6 +31,8 @@ export default function PhasmoItems() {
   const [currentItems, setCurrentItems] = useState<string[]>([])
   const [selectedItem, setSelectedItem] = useState<string>('Start by clicking roll')
 
+  const [resetClicked, setResetClicked] = useState<boolean>(false)
+
   const handleItemRoll = () => {
     const item = randomItem(customItems)
     const temp = currentItems
@@ -42,6 +44,11 @@ export default function PhasmoItems() {
   const handleRemoveItem = (index: number) => {
     const temp = currentItems.filter((item, idx) => idx !== index)
     setCurrentItems(temp)
+  }
+
+  const handleResetClicked = () => {
+    setResetClicked(true)
+    setCustomItems(DEFAULT_PHASMO_ITEMS)
   }
 
   return (
@@ -87,12 +94,7 @@ export default function PhasmoItems() {
           {/* <h3>Roll</h3> */}
           <div style={{ height: 'auto', color: 'red' }}>{selectedItem}</div>
           <div>
-            <button
-              onClick={() => {
-                handleItemRoll()
-              }}
-              style={{ width: 100, fontSize: 20, marginTop: 20 }}
-            >
+            <button onClick={handleItemRoll} style={{ width: 100, fontSize: 20, marginTop: 20 }}>
               Roll
             </button>
           </div>
@@ -126,10 +128,15 @@ export default function PhasmoItems() {
                       item={item}
                       customItems={customItems}
                       setCustomItems={setCustomItems}
+                      resetClicked={resetClicked}
+                      setResetClicked={setResetClicked}
                     />
                   </li>
                 ))}
               </ul>
+              <button onClick={handleResetClicked} style={{ width: 150, fontSize: 20 }}>
+                Reset List
+              </button>
             </div>
             <div className="column">
               <h5>Your Items</h5>
@@ -139,7 +146,8 @@ export default function PhasmoItems() {
                   overflowY: 'auto',
                   whiteSpace: 'nowrap',
                   textOverflow: 'ellipsis',
-                  maxHeight: 600,
+                  height: 525,
+                  maxHeight: 525,
                   minWidth: 100,
                   marginTop: 1,
                 }}
@@ -166,6 +174,14 @@ export default function PhasmoItems() {
                   </li>
                 ))}
               </ul>
+              <button
+                onClick={() => {
+                  setCurrentItems([])
+                }}
+                style={{ width: 150, fontSize: 20 }}
+              >
+                Reset Items
+              </button>
             </div>
           </div>
         </div>
@@ -177,10 +193,12 @@ interface ChallengeItemProps {
   item: string
   customItems: string[]
   setCustomItems: React.Dispatch<React.SetStateAction<string[]>>
+  resetClicked: boolean
+  setResetClicked: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const ChallengeItem = (props: ChallengeItemProps) => {
-  const { item, customItems, setCustomItems } = props
+  const { item, customItems, setCustomItems, resetClicked, setResetClicked } = props
   const [clicked, setClicked] = useState<boolean>(false)
 
   useEffect(() => {
@@ -195,12 +213,18 @@ export const ChallengeItem = (props: ChallengeItemProps) => {
     else {
       const temp = customItems
       if (customItems.indexOf(item) === -1) {
-        console.log('add item back')
         temp.push(item)
         setCustomItems(temp)
       }
     }
   }, [clicked])
+
+  useEffect(() => {
+    if (resetClicked) {
+      setClicked(false)
+      setResetClicked(false)
+    }
+  }, [resetClicked])
 
   return (
     <label
