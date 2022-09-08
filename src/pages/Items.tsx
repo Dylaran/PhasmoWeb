@@ -1,5 +1,5 @@
 import randomItem from 'random-item'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChallengeLine } from './Challenges'
 
 export const DEFAULT_PHASMO_ITEMS = [
@@ -33,8 +33,10 @@ export default function PhasmoItems() {
 
   const handleItemRoll = () => {
     const item = randomItem(customItems)
-    currentItems.push(item)
+    const temp = currentItems
+    temp.push(item)
     setSelectedItem(item)
+    setCurrentItems([...temp])
   }
 
   const handleRemoveItem = (index: number) => {
@@ -82,16 +84,24 @@ export default function PhasmoItems() {
       </div>
       <div className="split right">
         <div className="leftItem" style={{ width: '100%' }}>
-          <h3>Roll</h3>
+          {/* <h3>Roll</h3> */}
           <div style={{ height: 'auto', color: 'red' }}>{selectedItem}</div>
           <div>
-            <button onClick={handleItemRoll} style={{ width: 100, fontSize: 20, marginTop: 20 }}>
+            <button
+              onClick={() => {
+                handleItemRoll()
+              }}
+              style={{ width: 100, fontSize: 20, marginTop: 20 }}
+            >
               Roll
             </button>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div className="column">
-              <h5>Item List (doesn't work yet)</h5>
+              <h5 style={{ marginBottom: 0 }}>Item List</h5>
+              <h6 style={{ marginTop: 0, marginBottom: 20 }}>
+                Click an item to <span style={{ color: 'red' }}>toggle</span> on/off
+              </h6>
               <ul
                 style={{
                   overflowX: 'hidden',
@@ -112,7 +122,11 @@ export default function PhasmoItems() {
                       marginBottom: 5,
                     }}
                   >
-                    <ChallengeItem item={item} />
+                    <ChallengeItem
+                      item={item}
+                      customItems={customItems}
+                      setCustomItems={setCustomItems}
+                    />
                   </li>
                 ))}
               </ul>
@@ -161,10 +175,33 @@ export default function PhasmoItems() {
 }
 interface ChallengeItemProps {
   item: string
+  customItems: string[]
+  setCustomItems: React.Dispatch<React.SetStateAction<string[]>>
 }
 
 export const ChallengeItem = (props: ChallengeItemProps) => {
+  const { item, customItems, setCustomItems } = props
   const [clicked, setClicked] = useState<boolean>(false)
+
+  useEffect(() => {
+    // Remove the item from item list
+    if (clicked) {
+      const temp = customItems.filter((i) => {
+        return i !== item
+      })
+      setCustomItems(temp)
+    }
+    // Add the item back into the list
+    else {
+      const temp = customItems
+      if (customItems.indexOf(item) === -1) {
+        console.log('add item back')
+        temp.push(item)
+        setCustomItems(temp)
+      }
+    }
+  }, [clicked])
+
   return (
     <label
       style={{
@@ -179,7 +216,7 @@ export const ChallengeItem = (props: ChallengeItemProps) => {
         setClicked(!clicked)
       }}
     >
-      {props.item}
+      {item}
     </label>
   )
 }
