@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/PhasmoWeb/static/css/main.e71e71c3.css",
-    "main.js": "/PhasmoWeb/static/js/main.0ed05097.js",
+    "main.js": "/PhasmoWeb/static/js/main.60bd8650.js",
     "index.html": "/PhasmoWeb/index.html",
     "main.e71e71c3.css.map": "/PhasmoWeb/static/css/main.e71e71c3.css.map",
-    "main.0ed05097.js.map": "/PhasmoWeb/static/js/main.0ed05097.js.map"
+    "main.60bd8650.js.map": "/PhasmoWeb/static/js/main.60bd8650.js.map"
   },
   "entrypoints": [
     "static/css/main.e71e71c3.css",
-    "static/js/main.0ed05097.js"
+    "static/js/main.60bd8650.js"
   ]
 }
