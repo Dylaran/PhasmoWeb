@@ -125,12 +125,7 @@ export const DEFAULT_CHALLENGES = [
   'Activity Monitor Off',
   'Fusebox at Start Off',
   'Fusebox Visible Off',
-  'Cursed Possession #1 and Roll 1',
-  'Cursed Possession #2 and Roll 1',
-  'Cursed Possession #3 and Roll 1',
-  'Cursed Possession #4 and Roll 1',
-  'Cursed Possession #5 and Roll 1',
-  'Cursed Possession #6 and Roll 1',
+  'Cursed Possession #(Dice Roll) and Roll 1',
 ]
 
 const customStyles = {
